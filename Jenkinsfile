@@ -43,7 +43,7 @@ pipeline {
         }
         stage('docker container of app') {
             steps {
-               sh 'docker run -d -p 9000:8080 --name javamavenapp_container -t rajeshchoco/javamavenapp:latest'
+               sh 'docker run -d -p 9000:10000 --name javamavenapp_container -t rajeshchoco/javamavenapp:latest'
             }
         }
         
