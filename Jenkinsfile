@@ -20,15 +20,15 @@ pipeline {
                sh 'mvn clean package'
             }
         }
-        // stage('Docker images/conatiner remove') {
-        //     steps {
-        //         script{
-        //                 sh '''docker stop javamavenapp_container
-        //                 docker rm javamavenapp_container
-        //                 docker rmi javamavenapp rajeshchoco/javamavenapp:latest'''
-        //         }  
-        //     }
-        // }
+        stage('Docker images/conatiner remove') {
+            steps {
+                script{
+                        sh '''docker stop javamavenapp_container
+                        docker rm javamavenapp_container
+                        docker rmi javamavenapp rajeshchoco/javamavenapp:latest'''
+                }  
+            }
+        }
         stage('Docker images - Push to dockerhub') {
             steps {
                 script{
